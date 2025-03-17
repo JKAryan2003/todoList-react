@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
 import '../index.css'
+import DisplayTask from './DisplayTask';
 
 const AddTask = () => {
   const [task, setTask] = useState('');
   const [taskList, setTaskList] = useState([]);
 
   function handleInput(e) {
-    console.log(task);
     setTask(e.target.value)  
   }
 
   function handleClick() {
-    console.log(taskList);
     setTaskList([...taskList, 
       {
         task: task,
@@ -24,6 +23,7 @@ const AddTask = () => {
       <div className='addTask'>
         <input type="text" placeholder='New Task' value={task} onChange={handleInput} />
         <button onClick={handleClick}>Add Task</button>
+        <DisplayTask taskList={taskList} setTaskList={setTaskList} />
       </div>
     </>
   )
