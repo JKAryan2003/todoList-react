@@ -20,6 +20,23 @@ const TodoMain = () => {
     ]);
   }
 
+  function toggleTask(index) {
+
+    const updatedList = todos.map((todo, i) => {
+      if (index === i) {
+        return {
+          ...todo, complete: !todo.complete
+        }
+      }
+
+      return {
+        ...todo
+      }
+    })
+
+    setTodos(updatedList)
+  }
+
   return (
     <div>
       <h1>Todo list</h1>
@@ -28,7 +45,7 @@ const TodoMain = () => {
       {todos.map((todo, index) => 
       todo.isEditing ? 
       (<EditTodo />) : 
-      (<DisplayTask todo={todo}/>))}
+      (<DisplayTask todo={todo} toggleTask={toggleTask}/>))}
     </div>
   )
 }

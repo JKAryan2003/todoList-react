@@ -1,10 +1,10 @@
 import React from 'react'
+import '../index.css'
 
-const DisplayTask = ({todo}) => {
+const DisplayTask = ({todo, toggleTask}) => {
   return (
-    <div>
-      <span>{todo.task}</span>
-      <span>{todo.id}</span>
+    <div onClick={() => toggleTask(todo.id)}>
+      <span className={(todo.complete)? 'strike' : ''}>{todo.task}</span>
     </div>
   )
 }
