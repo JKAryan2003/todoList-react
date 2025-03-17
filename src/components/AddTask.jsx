@@ -14,7 +14,8 @@ const AddTask = () => {
     setTaskList([...taskList, 
       {
         task: task,
-        complete: false
+        complete: false,
+        isEditing: false
       }])
   }
 
