@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../index.css'
 
 const AddTask = () => {
   const [task, setTask] = useState('');
@@ -20,9 +21,10 @@ const AddTask = () => {
 
   return (
     <>
-      <input type="text" placeholder='New Task' value={task} onChange={handleInput} />
-      <button onClick={handleClick}>Add Task</button>
-      <button onClick={() => setTask("")}>Clear</button>
+      <div className='addTask'>
+        <input type="text" placeholder='New Task' value={task} onChange={handleInput} />
+        <button onClick={handleClick}>Add Task</button>
+      </div>
     </>
   )
 }

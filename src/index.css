@@ -1,0 +1,15 @@
+.addTask {
+  padding: 30px;
+}
+
+.addTask input {
+  margin: 5px;
+  padding: 10px 50px;
+}
+
+.addTask button {
+  margin: 30px;
+  padding: 10px 50px;
+  border-radius: 5%;
+  background-color: rgb(203, 236, 237);
+}
