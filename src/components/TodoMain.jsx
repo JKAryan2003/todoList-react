@@ -37,6 +37,10 @@ const TodoMain = () => {
     setTodos(updatedList)
   }
 
+  function deleteTodo (index) {
+    setTodos(todos => todos.filter(todo => todo.id !== index))
+  }
+
   return (
     <div>
       <h1>Todo list</h1>
@@ -45,7 +49,7 @@ const TodoMain = () => {
       {todos.map((todo, index) => 
       todo.isEditing ? 
       (<EditTodo />) : 
-      (<DisplayTask todo={todo} toggleTask={toggleTask}/>))}
+      (<DisplayTask todo={todo} toggleTask={toggleTask} deleteTodo={deleteTodo}/>))}
     </div>
   )
 }
