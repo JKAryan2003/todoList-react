@@ -7,6 +7,19 @@ let id = 0;
 
 const TodoMain = () => {
 
+  const [todos, setTodos] = useState([]);
+
+  function addTodo(todo) {
+    setTodos([
+      ...todos,
+      {
+        id: id++,
+        task: todo,
+        complete: false,
+      },
+    ]);
+  }
+
   return (
     <div>
       <h1>Todo list</h1>
