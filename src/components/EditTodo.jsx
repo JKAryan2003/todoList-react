@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 
-const EditTodo = ({ editTodo, todo }) => {
+const EditTodo = ({ editTask, todo }) => {
   const [value, setValue] = useState(todo.task);
-
-  function handleClick() {
-   
-  }
 
   return (
     <div>
@@ -15,7 +11,7 @@ const EditTodo = ({ editTodo, todo }) => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button onClick={handleClick}>Save</button>
+      <button onClick={() => editTask(value, todo.id)}>Save</button>
       <button>Cancel</button>
     </div>
   );
