@@ -10,15 +10,19 @@ const TodoMain = () => {
   const [todos, setTodos] = useState([]);
 
   function addTodo(todo) {
-    setTodos([
-      ...todos,
-      {
-        id: id++,
-        task: todo,
-        complete: false,
-        isEditing: false
-      },
-    ]);
+    if (todo === "") {
+      alert("Task cannot be empty")
+    } else {
+        setTodos([
+          ...todos,
+          {
+            id: id++,
+            task: todo,
+            complete: false,
+            isEditing: false
+          },
+        ]);
+    }
   }
 
   function toggleTask(index) {
