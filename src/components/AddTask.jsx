@@ -9,14 +9,15 @@ const AddTask = ({ addTodo }) => {
   }
 
   return (
-    <div>
+    <div className="p-3 d-flex justify-content-center">
       <input
         type="text"
-        placeholder="New Task"
+        placeholder="Track your tasks"
         value={task}
         onChange={(e) => setTask(e.target.value)}
+        className="py-2 rounded-1 m-1 w-75"
       />
-      <button onClick={handleClick}>Add Task</button>
+      <button onClick={handleClick} className="btn btn-info m-1">Add Task</button>
     </div>
   );
 };
