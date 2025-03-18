@@ -51,12 +51,21 @@ const TodoMain = () => {
   }
 
   function editTask(task, index) {
-    const updatedList = setTodos(
+    setTodos(
       todos.map((todo) => 
         todo.id === index ? { ...todo, task: task, isEditing: !todo.isEditing } : todo 
       )
     )
   }
+
+  function handleCancel(index) {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === index ? { ...todo, isEditing: !todo.isEditing } : todo
+      )
+    );
+  }
+
 
   return (
     <div>
@@ -65,7 +74,7 @@ const TodoMain = () => {
 
       {todos.map((todo, index) => 
       todo.isEditing ? 
-      (<EditTodo editTask={editTask} todo={todo}/>) : 
+      (<EditTodo editTask={editTask} todo={todo} handleCancel={handleCancel}/>) : 
       (<DisplayTask todo={todo} toggleTask={toggleTask} deleteTodo={deleteTodo} editTodo={editTodo}/>))}
     </div>
   )
