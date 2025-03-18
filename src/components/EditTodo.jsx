@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const EditTodo = ({ editTask, todo }) => {
+const EditTodo = ({ editTask, todo, handleCancel }) => {
   const [value, setValue] = useState(todo.task);
 
   return (
@@ -16,12 +16,11 @@ const EditTodo = ({ editTask, todo }) => {
       </div>
 
       <div className="col-md-3">
-        <button onClick={() => {editTask(value, todo.id); console.log("hello");
-        }} className="btn btn-info">Save</button>
+        <button onClick={() => editTask(value, todo.id)} className="btn btn-info">Save</button>
       </div>
 
       <div className="col-md-3">
-        <button className="btn btn-danger">Cancel</button>
+        <button onClick={() => handleCancel(todo.id)} className="btn btn-danger">Cancel</button>
       </div>
     </div>
   );
