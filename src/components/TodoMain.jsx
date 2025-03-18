@@ -16,6 +16,7 @@ const TodoMain = () => {
         id: id++,
         task: todo,
         complete: false,
+        isEditing: false
       },
     ]);
   }
@@ -41,6 +42,14 @@ const TodoMain = () => {
     setTodos(todos => todos.filter(todo => todo.id !== index))
   }
 
+  function editTodo (index) {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === index ? { ...todo, isEditing: !todo.isEditing } : todo
+      )
+    );
+  }
+
   return (
     <div>
       <h1>Todo list</h1>
@@ -48,8 +57,8 @@ const TodoMain = () => {
 
       {todos.map((todo, index) => 
       todo.isEditing ? 
-      (<EditTodo />) : 
-      (<DisplayTask todo={todo} toggleTask={toggleTask} deleteTodo={deleteTodo}/>))}
+      (<EditTodo editTodo={editTodo} todo={todo}/>) : 
+      (<DisplayTask todo={todo} toggleTask={toggleTask} deleteTodo={deleteTodo} editTodo={editTodo}/>))}
     </div>
   )
 }

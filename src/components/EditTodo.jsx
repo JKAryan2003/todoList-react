@@ -1,22 +1,24 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const EditTodo = () => {
+const EditTodo = ({ editTodo, todo }) => {
+  const [value, setValue] = useState(todo.task);
 
-  function handleEdit() {
-
+  function handleClick() {
+   
   }
-  
-  return (
-    <>
-      <table>
-        <tr>
-          <td><input type="text" placeholder='New Task' value={task} onChange={handleInput} /></td>
-          <td><button>Save</button></td>
-          <td><button>Cancel</button></td>
-        </tr>
-      </table>
-    </>
-  )
-}
 
-export default EditTodo
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Update Task"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+      <button onClick={handleClick}>Save</button>
+      <button>Cancel</button>
+    </div>
+  );
+};
+
+export default EditTodo;
