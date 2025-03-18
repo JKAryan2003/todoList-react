@@ -16,11 +16,11 @@ const EditTodo = ({ editTask, todo, handleCancel }) => {
       </div>
 
       <div className="col-md-3">
-        <button onClick={() => editTask(value, todo.id)} className="btn btn-info">Save</button>
+        <button onClick={() => editTask(value, todo.id)} className="btn text-info fs-4"><i class="bi bi-check-circle-fill"></i></button>
       </div>
 
       <div className="col-md-3">
-        <button onClick={() => handleCancel(todo.id)} className="btn btn-danger">Cancel</button>
+        <button onClick={() => handleCancel(todo.id)} className="btn text-danger fs-4"><i class="bi bi-x-circle-fill"></i></button>
       </div>
     </div>
   );

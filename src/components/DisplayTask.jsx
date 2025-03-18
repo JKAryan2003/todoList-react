@@ -9,11 +9,11 @@ const DisplayTask = ({todo, toggleTask, deleteTodo, editTodo}) => {
       </div>
 
       <div className='col-md-3'>
-        <button onClick={() => editTodo(todo.id)} className='btn btn-info'>Edit</button>
+        <button onClick={() => editTodo(todo.id)} className='btn text-info fs-4'><i class="bi bi-pencil-fill"></i></button>
       </div>
 
       <div className='col-md-3'>
-        <button onClick={() => deleteTodo(todo.id)} className='btn btn-danger'>Delete</button> 
+        <button onClick={() => deleteTodo(todo.id)} className='btn text-danger fs-4'><i class="bi bi-trash-fill"></i></button> 
       </div>
     </div>
   )
