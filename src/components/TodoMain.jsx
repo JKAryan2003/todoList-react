@@ -50,8 +50,8 @@ const TodoMain = () => {
     );
   }
 
-  function editTask(index, task) {
-    setTodos(
+  function editTask(task, index) {
+    const updatedList = setTodos(
       todos.map((todo) => 
         todo.id === index ? { ...todo, task: task, isEditing: !todo.isEditing } : todo 
       )
