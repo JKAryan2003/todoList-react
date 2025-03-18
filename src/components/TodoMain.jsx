@@ -50,6 +50,14 @@ const TodoMain = () => {
     );
   }
 
+  function editTask(index, task) {
+    setTodos(
+      todos.map((todo) => 
+        todo.id === index ? { ...todo, task: task, isEditing: !todo.isEditing } : todo 
+      )
+    )
+  }
+
   return (
     <div>
       <h1>Todo list</h1>
@@ -57,7 +65,7 @@ const TodoMain = () => {
 
       {todos.map((todo, index) => 
       todo.isEditing ? 
-      (<EditTodo editTodo={editTodo} todo={todo}/>) : 
+      (<EditTodo editTask={editTask} todo={todo}/>) : 
       (<DisplayTask todo={todo} toggleTask={toggleTask} deleteTodo={deleteTodo} editTodo={editTodo}/>))}
     </div>
   )
